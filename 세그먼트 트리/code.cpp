@@ -38,7 +38,7 @@ int query(int queryLeft, int queryRight, int node, int nodeLeft, int nodeRight) 
     }
 }
 
-// position번(1-based 자리에 addition만큼 더하기)
+// position번(1-based) 자리에 addition만큼 더하기
 void add(int position, int node, int nodeLeft, int nodeRight, int addition) {
     if ( nodeLeft <= position && position <= nodeRight ) {
         rangeSum[node] += addition;
