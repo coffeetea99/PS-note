@@ -42,12 +42,13 @@ int query(int queryLeft, int queryRight, int node, int nodeLeft, int nodeRight) 
 void add(int position, int node, int nodeLeft, int nodeRight, int addition) {
     if ( nodeLeft <= position && position <= nodeRight ) {
         rangeSum[node] += addition;
-        // [min] rangeSum[node] = min(rangeSum[node], addition);
         if ( nodeLeft != nodeRight ) {
             int nodeMid = (nodeLeft + nodeRight) / 2;
             add(position, node*2, nodeLeft, nodeMid, addition);
             add(position, node*2+1, nodeMid+1, nodeRight, addition);
+            // [min] rangeSum[node] = min(rangeSum[node*2], rangeSum[node*2+1],);
         }
+        // [min] else { rangeSum[node] = addition) };
     }
 }
 
